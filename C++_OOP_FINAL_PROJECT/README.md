@@ -7,7 +7,7 @@
 
 ## Task Description
 
-> Each student was assigned a unique project. This specific project required us to compute statistics on student grade arrays using C++ classes and struct-based design.
+>  This specific project required me to compute statistics on student grade arrays using C++ classes and struct-based design.
 
 ### The required tasks included:
 
