@@ -1,6 +1,7 @@
 # Student Grade Statistics – C++ Project
 
-**Author:** Heshima Herbert 223008594
+**Author:** Heshima Herbert 223008594.
+
 **Course Task:** Student Grade Analysis with Classes, Structs, and Polymorphism  
 
 ---
@@ -39,7 +40,7 @@ The program was designed step-by-step, starting from the `StudentRecord` struct,
 
 ---
 
-## ▶️ How to Run the Program
+## How to Run the Program
 
 > You need a C++ compiler like `g++`.
 
