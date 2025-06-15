@@ -219,7 +219,6 @@ int main() {
             // === SHOW STATS ===
             char name[30];
             cout << "Enter student name: ";
-            cin.ignore(); // in case previous input left a newline
             cin.getline(name, 30);
 
             bool found = false;
@@ -248,7 +247,6 @@ int main() {
             // === REMOVE STUDENT ===
             char name[30];
             cout << "Enter name to remove: ";
-            cin.ignore();
             cin.getline(name, 30);
 
             removeStudent(name); // remove by name

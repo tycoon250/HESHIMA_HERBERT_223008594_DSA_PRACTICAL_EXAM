@@ -1,110 +1,50 @@
+# Student Grade Statistics – C++ Project
 
-# Final C++ Project Submission
-
-## ✅ Assigned Project Title:  
-**Restaurant Menu & Orders System**
-
----
-
-## 🧠 Assigned Task Description
-
-Build a C++ restaurant ordering system using:
-
-- A `struct MenuItem` with a static array of 20 items.
-- An **abstract base class `OrderBase`** with a pure virtual `float totalCost()` method.
-- Two **derived classes**:
-  - `DineInOrder` with `float* serviceCharge`
-  - `TakeOutOrder` with `float* packagingFee`
-- Each order holds a `MenuItem** selectedItems` array dynamically allocated.
-- Use **pointer arithmetic** to compute totals.
-- Use `OrderBase*` objects in a `OrderBase** orders` array.
-- Add and remove orders using dynamic resizing.
+**Author:** Heshima Herbert 223008594
+**Course Task:** Student Grade Analysis with Classes, Structs, and Polymorphism  
 
 ---
 
-## 💪 How the Task Was Completed
+## Task Description
 
-1. **Struct Implementation**
-   - Defined `struct MenuItem { char name[30]; float price; };`
-   - Populated `MenuItem menu[20]` statically with 10 sample food items.
+> Each student was assigned a unique project. This specific project required us to compute statistics on student grade arrays using C++ classes and struct-based design.
 
-2. **OOP Design**
-   - Created abstract class `OrderBase` with:
-     - A dynamic array of `MenuItem*` (via `MenuItem** selectedItems`)
-     - A pure virtual function `float totalCost()` for polymorphism.
-   - Derived two classes:
-     - `DineInOrder` that adds a `float* serviceCharge`
-     - `TakeOutOrder` that adds a `float* packagingFee`
-   - Both override `totalCost()` to return item total + respective fee.
+### The required tasks included:
 
-3. **Pointer Use**
-   - Orders store items dynamically using `MenuItem**`.
-   - Prices are calculated using pointer dereferencing and pointer arithmetic.
-   - `OrderBase*` pointers stored in a `OrderBase** orders` array for polymorphic behavior.
-
-4. **Dynamic Memory**
-   - Arrays are resized manually using `new` and `delete` when adding/removing orders.
-
-5. **User Interface**
-   - Simple text-based menu in `main()`:
-     - Show menu
-     - Add dine-in or take-out order
-     - View all orders
-     - Remove order
-     - Exit
-
-6. **Code Annotation**
-   - Every line in `main.cpp` is commented to explain its function.
+- Defining a `StudentRecord` struct with a name, pointer to dynamically allocated grades, and a count of grades.
+- Creating an abstract class `Statistics` with a pure virtual function `compute(const StudentRecord*)`.
+- Creating two child classes:
+  - `MeanCalculator` to compute the average grade.
+  - `StdDevCalculator` to compute the standard deviation.
+- Using `Statistics*` pointers to store and call these operations dynamically (polymorphism).
+- Using pointer arithmetic or array indexing to process grades.
+- Allowing users to add and remove students dynamically (no fixed input).
+- Implementing a **user-friendly menu interface** (no hardcoded data).
+- Annotating code with detailed comments for every line.
 
 ---
 
-## 💬 Code Annotation Summary
+## How It Was Completed
 
-- ✅ Struct for static menu
-- ✅ Inheritance and polymorphism
-- ✅ Pointers to pointers (2D logic)
-- ✅ Manual memory management
-- ✅ Full inline code comments in `main.cpp`
+The program was designed step-by-step, starting from the `StudentRecord` struct, all the way to a clean and functional menu-driven application. Here's how the task was tackled:
 
-> See `main.cpp` for full code and annotations.
-
----
-
-## 📄 Screenshots of Resulting Outputs
-
-> Place screenshots in the `screenshots/` folder and update paths if needed.
-
-### 1️⃣ Main Menu
-![Main Menu](screenshots/main_menu.png)
-
-### 2️⃣ Adding Dine-In Order
-![Dine-In Order](screenshots/dine_in.png)
-
-### 3️⃣ Adding Take-Out Order
-![Take-Out Order](screenshots/take_out.png)
-
-### 4️⃣ Viewing Orders
-![View Orders](screenshots/view_orders.png)
-
-### 5️⃣ Removing an Order
-![Remove Order](screenshots/remove_order.png)
+- **Defined Struct**: Used `char name[30]`, `float* grades`, and `int nGrades` to store student data.
+- **Created Base Class**: The `Statistics` class declared a pure virtual method `compute()`.
+- **Derived Classes**: `MeanCalculator` and `StdDevCalculator` inherited from `Statistics` and implemented the required logic.
+- **Polymorphic Dispatch**: Used `Statistics* ops[]` to store and call operations dynamically.
+- **Dynamic Input**: Used `cin`, `cin.getline()`, and `new[]` to take input without hardcoding.
+- **User Interface**: Built a simple text-based menu to add/remove/list students and calculate stats.
+- **Memory Management**: Used `delete[]` to avoid memory leaks when removing students or exiting.
+- **Code Annotation**: Every line in the program is commented to explain its purpose.
 
 ---
 
-## ⚙️ How to Compile & Run
+## ▶️ How to Run the Program
 
-```bash
-g++ main.cpp -o restaurant
-./restaurant
-```
+> You need a C++ compiler like `g++`.
 
-> Make sure you're using a C++11+ compiler. Works on Linux, Windows (MinGW), and macOS.
-
----
-
-## 📃 Student Info
-
-**👤 Name:** _Your Full Name_  
-**🎓 Course:** C++ Programming / Final Project  
-**📆 Date:** _Submission Date Here_  
-**🧠 Topic:** Pointers, Inheritance, Dynamic Arrays, Polymorphism
+1. Save the code as `main.cpp`
+2. Open your terminal or command prompt
+3. Compile the code:
+   ```bash
+   g++ exam.cpp -o student_stats
